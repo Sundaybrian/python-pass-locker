@@ -43,7 +43,15 @@ class TestUser(unittest.TestCase):
         '''
         tearDown method that cleans up after each test has run
         '''
-        User.user_list=[]    
+        User.user_list=[]  
+
+     def test_display_users(self):
+         '''
+         test_display_users returns list of password locker users
+         ''' 
+
+         self.assertEqual(User.display_contacts(),User.user_list)
+
 
 
 
