@@ -45,12 +45,12 @@ class TestUser(unittest.TestCase):
         '''
         User.user_list=[]  
 
-     def test_display_users(self):
-         '''
-         test_display_users returns list of password locker users
-         ''' 
+    def test_display_users(self):
+        '''
+        test_display_users returns list of password locker users
+        ''' 
 
-         self.assertEqual(User.display_contacts(),User.user_list)
+        self.assertEqual(User.display_users(),User.user_list)
 
 
 
