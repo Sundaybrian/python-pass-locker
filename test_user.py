@@ -52,6 +52,17 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(User.display_users(),User.user_list)
 
+    def test_login_user(self):
+        '''
+        test_login_ to login a user
+        '''
+        #confirms if as vallid credentials are entered
+        self.new_user.save_user()
+        logged_in=User.user_verified(name,password)
+
+        self.assertTrue(login_in)
+
+
 
 
 
