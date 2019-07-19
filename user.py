@@ -1,6 +1,7 @@
 
 
 class User:
+
     '''
     Class that generates a new instance of a passlocker user
     
@@ -10,6 +11,7 @@ class User:
         name:New user name
         password:New user password
     '''
+    user_list=[]
 
     def __init__(self,name,password):
         
