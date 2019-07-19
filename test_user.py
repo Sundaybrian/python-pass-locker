@@ -1,7 +1,7 @@
 import unittest
 from user import User #importing the User class
 
-class UserTest(unittest.TestCase):
+class TestUser(unittest.TestCase):
     '''
     Test class that defines test cases for the user class behaviours
 
@@ -15,5 +15,13 @@ class UserTest(unittest.TestCase):
         '''
         self.new_user=User("Olivia","_Dunham")
 
-        
+    def test_init(self):
+        '''
+        test init test case to test if the obj is initialized correctly
+        '''
+        self.assertEqual(self.new_user.name,"Olivia")
+        self.assertEqual(self.new_user.password,"_Dunham")    
 
+        
+if __name__=='__main__':
+    unittest.main()
