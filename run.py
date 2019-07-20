@@ -91,8 +91,14 @@ def delete_credential(credential):
     '''
 
     credential.delete_credential(credential)
-    
-        
+
+def display_credentials(password):
+    '''
+    Function that returns all the users saved credentials
+    '''
+
+    return Credential.display_credential(password)        
+
 
 
         
