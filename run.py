@@ -23,7 +23,7 @@ def create_user(name,password):
 
     '''
 
-    new_user=Credential(name,password)
+    new_user=User(name,password)
 
     return new_user
 
@@ -35,7 +35,7 @@ def save_user(user):
         user:newly created user account to be saved
     '''
 
-    user.save_user(user)
+    user.save_user()
 
 def display_users():
     '''
@@ -77,10 +77,21 @@ def save_credential(credential):
     Function to save a credential
 
     Args:
-        credemtial:the credential to be saved
+        credential:the credential to be saved
     '''
 
-     credential.save_credential(credential)
+    credential.save_credential()
+
+def generated_password(pass_length):
+    '''
+    Function that generate a random password for a user's credential
+
+    Args:
+        pass_length:Length the user wants the password to be 
+    '''
+    password=Credential.generate_password(pass_length)
+
+    return password     
 
 def delete_credential(credential):
     '''
@@ -90,18 +101,73 @@ def delete_credential(credential):
         credential:credential to be deleted
     '''
 
-    credential.delete_credential(credential)
+    credential.delete_credential()
 
-def display_credentials(password):
+def display_credentials(user_name,user_password):
     '''
     Function that returns all the users saved credentials
     '''
 
-    return Credential.display_credential(password)        
+    return Credential.display_credential(user_name,password)        
 
 
 
-        
+def main():
+    '''
+    Function running the passlocker app
+    '''
+
+    print("Hello...Welcome to PassWord Locker!")
+    print("-"*20)
+
+    while True:
+        print('''Use these short codes to get around \n
+            ShortCodes: \n
+                cu:create new pass locker account \n
+                du:display users using pass locker\n
+                lg:login to your account \n
+                ex:exit the app          ''')
+        #take user input
+        short_code = input().lower()
+
+        if short_code == "cu":
+            print("-"*20)
+            print("New Password Locker Account")
+            print("-"*20)
+            print("\n")
+
+            print("Enter User Name")
+            user_name = input()
+
+            print("Enter Account Password")
+            user_password = input()
+
+            save_user( create_user(user_name,user_password) ) #create and save user
+            print('\n')
+            print(f"Password Locker Account for {user_name} created succesfully!!")
+            print('\n')
+
+        elif short_code == 'ex':
+            print("Ciao.....")
+            break
+        else :
+             print(f"No such short code:{short_code}!Please use provided codes")       
+                        
+
+
+
+        # elif short_code=="du":
+        # elif short_code=="lg":
+        # elif short_code=="ex":
+        #      print("Ciao....")
+        #      break
+        # else:
+        #      print("Didn't catch that.Please use the short codes provided")    
+              
+                    
+
+    
+
 
 
 
