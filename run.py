@@ -42,7 +42,7 @@ def display_users():
     Functionn that returns the users using pass_locker
     '''
 
-    return User.display_users
+    return User.display_users()
 
 def user_log_in(name,password):
     '''
@@ -146,6 +146,20 @@ def main():
             print('\n')
             print(f"Password Locker Account for {user_name} created succesfully!!")
             print('\n')
+
+        elif short_code == 'du':
+            if display_users():
+                print("Here are the users using password locker")
+                print('\n')   
+
+                for user in display_users():
+                    print(f"{user.name}")
+                print("\n")
+
+            else:
+                print('\n')
+                print("Password locker has no users!\n   Fancy being first user?")
+                print('\n')                        
 
         elif short_code == 'ex':
             print("Ciao.....")
