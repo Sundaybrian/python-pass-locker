@@ -230,7 +230,15 @@ def main():
                         '''
                         print("Logging Out...")
                         print("Logged Out")
-                        break        
+                        break 
+                    else:
+                        '''
+                        User types wrong code
+                        '''
+                        print('\n')
+                        print(f"Sorry there is no option associated with code:{short_code}")  
+                        print("Try Again..!")  
+
 
             else:
                 print('\n')
