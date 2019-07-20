@@ -108,6 +108,21 @@ class TestCredential(unittest.TestCase):
         found_credential=Credential.find_by_name("Lincoln","FBI","Fauxilivia")
         self.assertEqual(found_credential.credential_password,test_credential.credential_password)
 
+    def test_check_existing_credential(self):
+        '''
+        test to check if we can return a boolean if we can/cannot find a credential
+        '''
+
+
+        self.new_credential.save_credential()
+        test_credential=Credential("Dr.William","Bell","Massive Dynamic","Cortexiphan")
+
+        test_credential.save_credential()
+
+        credential_exists=Credential.credential_exists("Dr.William","Bell","Massive Dynamic")
+        self.assertTrue(credential_exists)
+
+
 
 
 if __name__=='__main__':
