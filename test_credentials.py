@@ -54,7 +54,19 @@ class TestCredential(unittest.TestCase):
         test_credential=Credential("Philip","Broyles","Homeland","The_Pattern")
 
         test_credential.save_credential()
-        self.assertEqual(len(Credential.credential_list),2)           
+        self.assertEqual(len(Credential.credential_list),2) 
+
+    def test_delete_credential(self):
+        '''
+        delete credential to test if we can remove a credential from the credential list
+        '''
+        self.new_credential.save_credential()
+
+        test_credential=Credential("Astrid","FansWorth","FBI","Lab_Assistant")  
+        test_credential.save_credential()
+        
+        self.new_credential.delete_credential()
+        self.assertEqual(len(Credential.credential_list),1)            
 
 if __name__=='__main__':
     unittest.main()        
