@@ -81,7 +81,7 @@ class TestCredential(unittest.TestCase):
         test_credential=test_credential=Credential("September","Observer","Walternate","Alternate_Universe")
         test_credential.save_credential()
 
-        self.assertEqual(len(Credential.display_credential("September")),2)
+        self.assertEqual(len(Credential.display_credential("September","Observer")),2)
 
 
 if __name__=='__main__':
