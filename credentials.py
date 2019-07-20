@@ -1,3 +1,11 @@
+'''
+Import string module that contains various ASCII characters of all cases
+
+Import random module to perform random generations
+'''
+
+import random
+import string
 
 class Credential:
     '''
@@ -36,8 +44,8 @@ class Credential:
         '''
 
         Credential.credential_list.remove(self) 
-        
-              
+
+
     @classmethod
     def display_credential(cls,name,password):
         '''
@@ -56,3 +64,15 @@ class Credential:
 
         return user_credential_list        
 
+    @classmethod
+    def generate_password(cls,pass_length):
+        '''
+        Method that generates a random alphanumeric password for a user
+        '''
+        #password characters
+        pass_chars= string.ascii_letters+string.digits+string.punctuation
+
+        #password
+        password=''.join(random.choice(pass_chars) for i in range(pass_length))
+
+        return password

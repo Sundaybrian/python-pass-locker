@@ -89,9 +89,9 @@ class TestCredential(unittest.TestCase):
         '''
         #password length
         pass_length=8
-        
+
         #variable to hold the password
-        generated_password=Credential.generated_password(pass_length)
+        generated_password=Credential.generate_password(pass_length)
 
         self.assertEqual(len(generated_password),pass_length)   
 
