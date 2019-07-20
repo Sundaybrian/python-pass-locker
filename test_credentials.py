@@ -105,7 +105,7 @@ class TestCredential(unittest.TestCase):
 
         test_credential.save_credential()
 
-        found_credential=Credential.find_by_name("Fauxilivia")
+        found_credential=Credential.find_by_name("Lincoln","FBI","Fauxilivia")
         self.assertEqual(found_credential.credential_password,test_credential.credential_password)
 
 
