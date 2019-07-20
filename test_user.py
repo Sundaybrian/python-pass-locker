@@ -58,9 +58,11 @@ class TestUser(unittest.TestCase):
         '''
         #confirms if as vallid credentials are entered
         self.new_user.save_user()
-        logged_in=User.user_verified(name,password)
+        test_user=User("Peter","Bishop_3")
+        test_user.save_user()
+        logged_in=User.user_verified("Peter","Bishop_3")
 
-        self.assertTrue(login_in)
+        self.assertTrue(logged_in)
 
 
 
