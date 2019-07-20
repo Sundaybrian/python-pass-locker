@@ -119,6 +119,15 @@ def find_by_name(user_name,user_password,credential_name):
 
 
 
+def credential_exists(user_name,user_password,credential_name):
+    '''
+    Function that find a credential by name and returns the credential
+    '''
+
+    return Credential.credential_exists(user_name,user_password,credential_name)
+
+
+
 
 def main():
     '''
@@ -278,7 +287,17 @@ def main():
                         Delete a Credential
                         '''
                         print('\n')
-                        print("Enter ")    
+                        print("Enter Name Of the Credential")
+                        credential_name = input()
+
+                        if credential_exists(user_name,user_password,credential_name):
+                            search_credential = find_by_name(user_name,user_password,credential_name)
+                            print(f"{search_credential.credential_name} \n {search_credential.credential_password}")
+                            
+
+
+                        else:
+                            print(f"No credential with the name {credential_name} exists")
                             
 
 
