@@ -185,6 +185,7 @@ def main():
             if  user_log_in(user_name,user_password):
                 print('\n')
                 print(f"Welcome {user_name} to your Credentials" )
+                print("*"*30)
 
                 while True:
                     '''
@@ -204,6 +205,25 @@ def main():
                         '''
                         Creating a credential
                         '''
+                        print('\n')
+                        print("New Credential")
+                        print("-"*20)
+
+                        print("Name of the Credential...")   
+                        credential_name = input()
+
+                        print("Password of the Credential")
+                        credential_password = input()
+
+                        #create and save credential
+                        save_credential( create_credential(user_name,user_password,credential_name,credential_password)
+                        )
+
+                        print('\n')
+                        print(f"Credentials for *{credential_name}* has been created and saved successfully")
+                        print('\n')    
+
+
                     elif short_code == 'ex':
                         '''
                         Exit credential account
