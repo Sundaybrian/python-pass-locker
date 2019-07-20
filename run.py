@@ -131,6 +131,9 @@ def main():
         short_code = input().lower()
 
         if short_code == "cu":
+            '''
+            Creates a new user account
+            '''
             print("-"*20)
             print("New Password Locker Account")
             print("-"*20)
@@ -148,6 +151,9 @@ def main():
             print('\n')
 
         elif short_code == 'du':
+            '''
+            Displays name of current users
+            '''
             if display_users():
                 print("Here are the users using password locker")
                 print('\n')   
@@ -159,7 +165,65 @@ def main():
             else:
                 print('\n')
                 print("Password locker has no users!\n   Fancy being first user?")
-                print('\n')                        
+                print('\n')
+
+        elif short_code == "lg":
+            '''
+            Logs in user to the password locker account
+            '''
+            print('\n')
+            print("Log into Password Locker Account")
+            print("*"*30)
+
+            print("Enter User Name")
+            user_name = input()
+            
+            print("Enter Password")
+            user_password = input()
+
+
+            if  user_log_in(user_name,user_password):
+                print('\n')
+                print(f"Welcome {user_name} to your Credentials" )
+
+                while True:
+                    '''
+                    Loop to run functionalities after successful login
+                    '''
+                    print('''Use these short code to navigate \n
+                        cc:Create a new credential \n
+                        dc:Display saved credentials \n
+                        gc:Generate credential with a random password\n
+                        dl:Delete credential\n    
+                        ex:Log out of credential account           ''')
+
+                    #get short code from user
+                    short_code = input().lower()
+
+                    if short_code == "cc":
+                        '''
+                        Creating a credential
+                        '''
+                    elif short_code == 'ex':
+                        '''
+                        Exit credential account
+                        '''
+                        print("Logging Out...")
+                        print("Logged Out")
+                        break        
+
+            else:
+                print('\n')
+                print(f"No Account for {user_name}")
+                print("Please try again or create an account")
+                print('\n')
+
+
+                        
+
+
+
+
 
         elif short_code == 'ex':
             print("Ciao.....")
