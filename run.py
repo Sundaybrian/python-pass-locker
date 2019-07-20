@@ -108,7 +108,15 @@ def display_credentials(user_name,user_password):
     Function that returns all the users saved credentials
     '''
 
-    return Credential.display_credential(user_name,user_password)        
+    return Credential.display_credential(user_name,user_password)     
+
+def find_by_name(user_name,user_password,credential_name):
+    '''
+    Function that find a credential by name and returns the credential
+    '''
+
+    return Credential.find_by_name(user_name,user_password,credential_name)
+
 
 
 
@@ -270,7 +278,8 @@ def main():
                         Delete a Credential
                         '''
                         print('\n')
-                                      
+                            
+
 
 
 
