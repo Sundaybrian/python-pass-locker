@@ -27,7 +27,17 @@ def create_user(name,password):
 
     return new_user
 
-def 
+def save_user(user):
+    '''
+    Function to save a new user account
+
+    Arg:
+        user:newly created user account to be saved
+    '''
+
+    user.save_user(user)
+    
+        
 
 if __name__ == "__main__":
     main()
