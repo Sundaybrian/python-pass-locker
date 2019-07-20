@@ -251,7 +251,7 @@ def main():
 
                         if display_credentials(user_name,user_password):
                             print('\n')
-                            print(f"{user_name} credentials")
+                            print(f"{user_name} Credentials")
                             print("-"*25)
 
                             for credential in display_credentials(user_name,user_password):
@@ -284,7 +284,7 @@ def main():
                         save_credential(create_credential(user_name,user_password,credential_name,(generated_password(pass_length))))  
 
                         print('\n')
-                        print(f"Credential {credential_name} has been created and saved successfully")
+                        print(f"**Credential {credential_name} has been created and saved successfully**")
                         print('\n')    
 
                     elif short_code == 'dl':
@@ -301,22 +301,26 @@ def main():
                             print(f"{search_credential.credential_name}\n{search_credential.credential_password}")
 
                             print('\n')
-                            print(f"Are You Sure You Wish to Delete {search_credential.credential_name}? \n This Action is Irreversible")    
+                            print(f"Are You Sure You Wish to Delete {search_credential.credential_name}? \n   This Action is Irreversible")    
                             print("Enter y/n...")
+                            print('\n')
 
                             delete_response = input().lower()
 
                             if delete_response == 'y':
                                 search_credential.delete_credential()
-                                print("Credential Deleted Successfully")
+                                print("**Credential Deleted Successfully**")
                                 print('\n')
 
                             else :
-                                print("Probably a good idea...\n Exiting delete action")
+                                print("Probably a good idea")
+                                print("... Exiting delete action")
+                                print("\n")
                                     
 
                         else:
-                            print(f"No credential with the name {credential_name} exists")
+                            print(f"**No credential with the name {credential_name} exists**")
+                            print("\n")
                             
 
 
@@ -335,7 +339,8 @@ def main():
                         '''
                         print('\n')
                         print(f"Sorry there is no option associated with code:{short_code}")  
-                        print("Try Again..!")  
+                        print("Try Again..!")
+                        print('\n')  
 
 
             else:
