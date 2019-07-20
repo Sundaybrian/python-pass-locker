@@ -93,7 +93,21 @@ class TestCredential(unittest.TestCase):
         #variable to hold the password
         generated_password=Credential.generate_password(pass_length)
 
-        self.assertEqual(len(generated_password),pass_length)   
+        self.assertEqual(len(generated_password),pass_length)  
+
+    def test_find_credential(self):
+        '''
+        test to see if we can search for and fetch a credential by its name
+        '''
+
+        self.new_credential.save_credential()
+        test_credential=Credential("Lincoln","FBI","Fauxilivia","Olivia_Dunham")
+
+        test_credential.save_credential()
+
+        found_credential=Credential.find_by_name("Fauxilivia")
+        self.assertEqual(found_credential.credential_password,test_credential.credential_password)
+
 
 
 if __name__=='__main__':

@@ -250,7 +250,7 @@ def main():
                         '''
                         print("\n")
                         print("New Credential With Auto-Generated Password")
-                        print("_"*20)
+                        print("-"*20)
 
                         print("Enter Name of Credential...")
                         credential_name = input()
@@ -263,7 +263,14 @@ def main():
 
                         print('\n')
                         print(f"Credential {credential_name} has been created and saved successfully")
-                        print('\n')      
+                        print('\n')    
+
+                    elif short_code == 'dl':
+                        '''
+                        Delete a Credential
+                        '''
+                        print('\n')
+                                      
 
 
 
