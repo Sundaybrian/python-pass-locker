@@ -55,6 +55,24 @@ def user_log_in(name,password):
     verified_user=User.user_verified(name,password)
     
     return verified_user
+
+def create_credential(user_name,user_password,credential_name,credential_password):
+
+    '''
+    Function to create a credential
+
+    Args:
+        user_name:Name of account holder
+        user_password:Password for the pass locker account
+        credential_name:Name of the account to save
+        credential_password:Password of the account to save
+    '''
+
+    new_credential=Credential(user_name,user_password,credential_name,credential_password)
+
+    return new_credential
+
+
         
 
 
