@@ -28,6 +28,13 @@ class Credential:
         Method that saves a credential obj to the credential list
         '''
 
-        Credential.credential_list.append(self)    
+        Credential.credential_list.append(self) 
+
+    def delete_credential(self):
+        '''
+        Method that deletes a saved credential from the credential_list
+        '''
+
+        Credential.credential_list.remove(self)       
 
     
