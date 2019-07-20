@@ -17,6 +17,14 @@ class TestCredential(unittest.TestCase):
         #create a credential obj
         self.new_credential=Credential("Nina","Sharp","Massive Dynamics","William_Bell")
 
+    def tearDown(self):
+        '''
+        tearDown method that cleans up after each test case is run
+        '''
+
+        Credential.credential_list=[]
+
+
     def test_init(self):
         '''
         test init test case to test if the obj is initialized properly
@@ -26,6 +34,7 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.user_password,"Sharp") 
         self.assertEqual(self.new_credential.credential_name,"Massive Dynamics")
         self.assertEqual(self.new_credential.credential_password,"William_Bell")
+
 
     def test_save_credential(self):
         '''
