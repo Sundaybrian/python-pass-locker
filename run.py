@@ -108,7 +108,7 @@ def display_credentials(user_name,user_password):
     Function that returns all the users saved credentials
     '''
 
-    return Credential.display_credential(user_name,password)        
+    return Credential.display_credential(user_name,user_password)        
 
 
 
@@ -221,7 +221,29 @@ def main():
 
                         print('\n')
                         print(f"Credentials for *{credential_name}* has been created and saved successfully")
-                        print('\n')    
+                        print('\n') 
+
+                    elif short_code == 'dc':
+                        '''
+                        Returning the user's saved credentials
+                        '''
+
+                        if display_credentials(user_name,user_password):
+                            print('\n')
+                            print(f"{user_name} credentials")
+                            print("-"*20)
+
+                            for credential in display_credentials(user_name,user_password):
+                                print(f"Account:{credential.credential_name}")
+                                print(f"Password:{credential.credential_password}")  
+                                print('_'*10)
+
+                        else:
+                            print("\n")
+                            print("You have no credentials saved")
+                            print("Create a new one...")
+                            print("\n")              
+
 
 
                     elif short_code == 'ex':
